@@ -42,7 +42,6 @@ export const Player: React.FC<PlayerProps> = (props) =>
         return (
             <PlayerStyled>
                 {!isPlaying ? <ButtonPlay onClick={async () => {
-                    console.log(playerContext.textToSay, !playerContext.textToSay);
                     if (!playerContext.textToSay)
                     {
                         ErrorMessage.error("Nothing to play");

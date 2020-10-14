@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export class ErrorMessage
 {
     static timeout = 0;

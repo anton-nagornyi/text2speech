@@ -47,7 +47,7 @@ export class GoogleSpeakerApi implements ISpeakerApi
                     text: text
                 },
                 voice: {
-                    languageCode: voice.language, ssmlGender: voice.gender
+                    languageCode: voice.language, ssmlGender: voice.gender, name: voice.name
                 },
                 audioConfig: {audioEncoding: "MP3", speakingRate: speed}
             })
