@@ -1,11 +1,11 @@
 export class ErrorMessage
 {
-    static timeout = 0;
-    static _errorMsg = "";
+    private static _timeout = 0;
+    private static _errorMsg = "";
 
     static error(message: string): void
     {
-        if (this.timeout !== 0)
+        if (this._timeout !== 0)
         {
             this._errorMsg = `${this._errorMsg}<br/>${message}`;
         }
@@ -13,7 +13,7 @@ export class ErrorMessage
         {
             this._errorMsg = message;
         }
-        clearTimeout(this.timeout);
+        clearTimeout(this._timeout);
 
         let e = document.getElementById("ErrorMessage.error");
         if (!e)
@@ -30,10 +30,10 @@ export class ErrorMessage
         e!.style.display = "block";
         e.innerHTML = this._errorMsg;
 
-        this.timeout = setTimeout(() => {
+        this._timeout = setTimeout(() => {
             e!.style.display = "none";
             this._errorMsg = "";
-            this.timeout = 0;
+            this._timeout = 0;
         }, 3000);
     }
 }

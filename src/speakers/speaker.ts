@@ -41,7 +41,6 @@ export class Speaker
             this._cache.set(text, voice, speed, URL.createObjectURL(blob));
         }
         out.src = this._cache.url;
-        console.log(out);
         await out.play();
     }
 
